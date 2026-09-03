@@ -24,7 +24,7 @@ The notebooks have execution outputs removed and local machine paths replaced wi
 Expected archive SHA-256:
 
 ```text
-b359e06455d0af4a7f4ece631b1d1734d7dec6f4b4a9c42e72e63f3bc563bab8
+a8d263535773065e9c6cd3931181c64c02f1166a934b0c289127728131014237
 ```
 
 The archive is split into four parts:
