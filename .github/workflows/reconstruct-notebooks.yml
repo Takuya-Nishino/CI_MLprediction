@@ -1,0 +1,33 @@
+name: Reconstruct sanitized notebooks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'release/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reconstruct:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Reconstruct sanitized notebooks
+        run: python release/reconstruct_notebooks.py
+
+      - name: Commit notebooks if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 01_main_analysis.ipynb 02_sensitivity_analysis.ipynb 03_tables_figures.ipynb 04_shap_analysis.ipynb
+          if git diff --cached --quiet; then
+            echo "No notebook changes to commit."
+          else
+            git commit -m "Add sanitized analysis notebooks"
+            git push
+          fi
