@@ -37,3 +37,5 @@ analysis_notebooks.tar.xz.part03
 ```
 
 Do not commit reconstructed outputs, source data, fitted models, or patient-level prediction files.
+
+The repository workflow reconstructs and commits the sanitized notebooks when this release bundle is updated.
