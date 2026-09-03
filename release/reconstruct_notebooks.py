@@ -7,7 +7,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 PARTS = [HERE / f"analysis_notebooks.tar.xz.part{i:02d}" for i in range(4)]
 ARCHIVE = HERE / "analysis_notebooks.tar.xz"
-EXPECTED_SHA256 = "b359e06455d0af4a7f4ece631b1d1734d7dec6f4b4a9c42e72e63f3bc563bab8"
+EXPECTED_SHA256 = "a8d263535773065e9c6cd3931181c64c02f1166a934b0c289127728131014237"
 
 missing = [path.name for path in PARTS if not path.exists()]
 if missing:
