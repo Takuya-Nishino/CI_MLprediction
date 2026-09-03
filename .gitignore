@@ -1,0 +1,27 @@
+# Patient-level / source data
+data/*
+!data/README.md
+*.xlsx
+*.xls
+*.csv
+*.parquet
+*.pq
+
+# Generated analysis outputs
+outputs/
+*.joblib
+*.pkl
+*.pickle
+
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
