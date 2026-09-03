@@ -1,16 +1,15 @@
 from __future__ import annotations
 
 import hashlib
-import lzma
 import tarfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 PARTS = [HERE / f"analysis_notebooks.tar.xz.part{i:02d}" for i in range(4)]
 ARCHIVE = HERE / "analysis_notebooks.tar.xz"
-EXPECTED_SHA256 = "df45f6b121ca77dc2859804278724fc05a393bdab55bce2c82f620dbca8bfb39"
+EXPECTED_SHA256 = "b359e06455d0af4a7f4ece631b1d1734d7dec6f4b4a9c42e72e63f3bc563bab8"
 
-missing = [str(path.name) for path in PARTS if not path.exists()]
+missing = [path.name for path in PARTS if not path.exists()]
 if missing:
     raise FileNotFoundError(f"Missing release part(s): {', '.join(missing)}")
 
